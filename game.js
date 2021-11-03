@@ -43,6 +43,9 @@ function start() {
   bees = new Array();
   //create bees
   makeBees();
+
+  //update the bees
+  updateBees();
 }
 
 // Handle keyboad events
@@ -151,4 +154,26 @@ function makeBees() {
     bees.push(bee); //add the bee object to the bees array
     i++;
   }
+}
+
+function moveBees() {
+  //get speed input field value
+  let speed = document.getElementById("speedBees").value;
+  //move each bee to a random location
+  for (let i = 0; i < bees.length; i++) {
+    let dx = getRandomInt(2 * speed) - speed;
+    let dy = getRandomInt(2 * speed) - speed;
+    bees[i].move(dx, dy);
+  }
+}
+
+function updateBees() {
+  // update loop for game
+  //move the bees randomly
+  moveBees();
+  //use a fixed update period
+  let period = 10; //modify this to control refresh period
+
+  //update the timer for the next move
+  updateTimer = setTimeout("updateBees()", period);
 }
