@@ -14,12 +14,18 @@ function Bear() {
     this.display();
   };
   this.display = function () {
+    //adjust position of bear and display it
+
+    //added to stop bear from going out of bounds
+    this.fitBounds();
+
     this.htmlElement.style.left = this.x + "px";
     this.htmlElement.style.top = this.y + "px";
     this.htmlElement.style.display = "absolute";
   };
   //stops bear from going out of bounds
   this.fitBounds = function () {
+    //check and make sure the bear stays in the board space
     let parent = this.htmlElement.parentElement;
     let iw = this.htmlElement.offsetWidth;
     let ih = this.htmlElement.offsetHeight;
