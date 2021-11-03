@@ -46,7 +46,7 @@ function start() {
   // Add an event listener to the keypress event.
   document.addEventListener("keydown", moveBear, false);
 
-  // Add an event listener to the keypress event.
+  // Add an event listener to the keypress events.
   document.addEventListener("change", setSpeed, false);
 
   //create new array for bees
@@ -102,6 +102,7 @@ class Bee {
     this.x = this.htmlElement.offsetLeft;
     //the top position (y)
     this.y = this.htmlElement.offsetTop;
+
     this.move = function (dx, dy) {
       //move the bees by dx, dy
       this.x += dx;
@@ -194,7 +195,7 @@ function updateBees() {
   //move the bees randomly
   moveBees();
   //use a fixed update period
-  let period = 10; //modify this to control refresh period
+  let period = document.getElementById("periodTimer").value; //modify this to control refresh period
 
   //update the timer for the next move
   updateTimer = setTimeout("updateBees()", period);
