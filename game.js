@@ -1,5 +1,6 @@
 function Bear() {
   this.dBear = 100;
+
   this.htmlElement = document.getElementById("bear");
   this.id = this.htmlElement.id;
   this.x = this.htmlElement.offsetLeft;
@@ -39,6 +40,9 @@ function start() {
   // Add an event listener to the keypress event.
   document.addEventListener("keydown", moveBear, false);
 
+  // Add an event listener to the keypress event.
+  document.addEventListener("change", setSpeed, false);
+
   //create new array for bees
   bees = new Array();
   //create bees
@@ -46,6 +50,11 @@ function start() {
 
   //update the bees
   updateBees();
+}
+
+//handle the bears movement speed when changed (event)
+function setSpeed(e) {
+  bear.dBear = document.getElementById("speedBear").value;
 }
 
 // Handle keyboad events
