@@ -57,6 +57,13 @@ function setSpeed(e) {
   bear.dBear = document.getElementById("speedBear").value;
 }
 
+function getRandomInt(max) {
+  //returns a random number between 0 and max
+  //math.floor is needed because random will return a non int
+  //  (0.39812637816...)
+  return Math.floor(Math.random() * max);
+}
+
 // Handle keyboad events
 // to move the bear
 function moveBear(e) {
