@@ -58,7 +58,13 @@ function start() {
 
   //update the bees
   updateBees();
+
+  /*if (hits.innerHTML == 1000) {
+    stop();
+  }*/
 }
+
+//function stop() {}
 
 //handle the bears movement speed when changed (event)
 function setSpeed(e) {
@@ -209,11 +215,16 @@ function updateBees() {
   //need to check for number of stings here
   if (Number(hits.innerHTML) == 1000) {
     //needs to stop game,
+
     //reset counters,
     hits.innerHTML = 0;
-    updateTimer = clearTimeout();
+    clearTimeout(updateTimer);
+
     //display game over,
+    alert("Game Over!");
+
     //and offer a chance to restart
+    //stop() function?
   }
 
   //update the timer for the next move
