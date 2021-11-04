@@ -239,6 +239,8 @@ function updateBees() {
     clearTimeout(updateTimer);
     document.getElementById("duration").innerHTML = 0;
     longestDuration = 0; // doesn't this go back on what he said?
+    //reload page after loss
+    window.location.reload();
     //and offer a chance to restart
     //stop() function?
   }
