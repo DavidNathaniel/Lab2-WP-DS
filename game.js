@@ -1,5 +1,5 @@
 function Bear() {
-  this.dBear = 100;
+  this.dBear = document.getElementById("speedBear").value;
 
   this.htmlElement = document.getElementById("bear");
   this.id = this.htmlElement.id;
@@ -64,7 +64,7 @@ function start() {
   document.addEventListener("keydown", moveBear, false);
 
   // Add an event listener for the input changing event.
-  document.addEventListener("change", setSpeed, false);
+  //document.addEventListener("change", setSpeed, false);
 
   //take start time
   document.addEventListener("keydown", setLastStingTime, false);
@@ -82,9 +82,9 @@ function start() {
 //function stop() {}
 
 //handle the bears movement speed when changed (event)
-function setSpeed(e) {
+/*function setSpeed(e) {
   bear.dBear = document.getElementById("speedBear").value;
-}
+}*/
 
 function setLastStingTime(e) {
   lastStingTime = new Date();
