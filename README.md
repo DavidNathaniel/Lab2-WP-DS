@@ -20,4 +20,4 @@ To view the game.js file click [here](https://github.com/DavidNathaniel/Lab2-WP-
 -------------------------------
 
 To view the website, access the page via:
-[codeSandBox](https://https://79y2f.csb.app//)
+[codeSandBox](https://79y2f.csb.app//)
