@@ -15,9 +15,7 @@ function Bear() {
   };
   this.display = function () {
     //adjust position of bear and display it
-
-    //added to stop bear from going out of bounds
-    this.fitBounds();
+    this.fitBounds(); //added to stop bear from going out of bounds
 
     this.htmlElement.style.left = this.x + "px";
     this.htmlElement.style.top = this.y + "px";
@@ -46,11 +44,12 @@ function start() {
   // Add an event listener to the keypress event.
   document.addEventListener("keydown", moveBear, false);
 
-  // Add an event listener to the keypress events.
+  // Add an event listener for the input changing event.
   document.addEventListener("change", setSpeed, false);
 
   //take start time
-  lastStingTime = new Date();
+  document.addEventListener("keydown", setLastStingTime, false);
+  //
 
   //create new array for bees
   bees = new Array();
@@ -64,6 +63,10 @@ function start() {
 //handle the bears movement speed when changed (event)
 function setSpeed(e) {
   bear.dBear = document.getElementById("speedBear").value;
+}
+
+function setLastStingTime(e) {
+  lastStingTime = new Date();
 }
 
 function getRandomInt(max) {
