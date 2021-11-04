@@ -82,9 +82,9 @@ function start() {
 //function stop() {}
 
 //handle the bears movement speed when changed (event)
-/*function setSpeed(e) {
+function setSpeed(e) {
   bear.dBear = document.getElementById("speedBear").value;
-}*/
+}
 
 function setLastStingTime(e) {
   lastStingTime = new Date();
