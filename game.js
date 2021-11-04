@@ -38,6 +38,15 @@ function Bear() {
   };
 }
 
+function StartButton(name) {
+  if (name == "Start Game") {
+    document.getElementById("startGameButton").innerHTML = "Restart";
+    start();
+  } else if (name == "Restart") {
+    start();
+  }
+}
+
 function start() {
   //create bear
   bear = new Bear();
@@ -216,13 +225,12 @@ function updateBees() {
   if (Number(hits.innerHTML) == 1000) {
     //needs to stop game,
 
-    //reset counters,
-    hits.innerHTML = 0;
-    clearTimeout(updateTimer);
-
     //display game over,
     alert("Game Over!");
 
+    //reset counters,
+    hits.innerHTML = 0;
+    clearTimeout(updateTimer);
     //and offer a chance to restart
     //stop() function?
   }
