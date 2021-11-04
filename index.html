@@ -11,6 +11,7 @@
         var bees;
         var updateTimer;
         var lastStingTime;
+        var longestDuration;
     </script>
     <script src="game.js"></script>
     <noscript>
@@ -24,7 +25,8 @@
         <div id="title">
             <h1>Help the bear escape the bees !</h1>
 
-            <p>Click here to start the game <button id="startGameButton" onclick="StartButton(document.getElementById('startGameButton').innerHTML);">Start Game</button></p>
+            <p>Click here to start the game <button id="startGameButton" onclick="StartButton(document.getElementById('startGameButton').innerHTML);">Start Game</button>
+            Click here to add a bee to the game <button id="addBeeButton" onclick="addBee();">+1 Bee</button></p>
 
             <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
             <p>You can adjust the bear's speed <input type="text" id="speedBear" value="100" size="3"> px/ms

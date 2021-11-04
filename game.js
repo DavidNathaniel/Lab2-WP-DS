@@ -40,11 +40,21 @@ function Bear() {
 
 function StartButton(name) {
   if (name == "Start Game") {
-    document.getElementById("startGameButton").innerHTML = "Restart";
+    //document.getElementById("startGameButton").innerHTML = "Restart";
     start();
   } else if (name == "Restart") {
+    //this would be the functionality for a restart button
+    //currently don't have time to implement.
+    //bees = [];
     start();
   }
+}
+
+function addBee() {
+  var num = Number(document.getElementById("nbBees").value) + 1;
+  var bee = new Bee(num); //create object and its IMG element
+  bee.display(); //display the bee
+  bees.push(bee); //add the bee object to the bees array
 }
 
 function start() {
@@ -61,16 +71,12 @@ function start() {
   //
 
   //create new array for bees
-  bees = new Array();
+  bees = new Array(); //= [];?
   //create bees
   makeBees();
 
   //update the bees
   updateBees();
-
-  /*if (hits.innerHTML == 1000) {
-    stop();
-  }*/
 }
 
 //function stop() {}
@@ -231,6 +237,8 @@ function updateBees() {
     //reset counters,
     hits.innerHTML = 0;
     clearTimeout(updateTimer);
+    document.getElementById("duration").innerHTML = 0;
+    longestDuration = 0; // doesn't this go back on what he said?
     //and offer a chance to restart
     //stop() function?
   }
@@ -251,7 +259,7 @@ function isHit(defender, offender) {
     let newStingTime = new Date();
     let thisDuration = newStingTime - lastStingTime;
     lastStingTime = newStingTime;
-    let longestDuration = Number(duration.innerHTML);
+    longestDuration = Number(duration.innerHTML);
     if (longestDuration === 0) {
       longestDuration = thisDuration;
     } else {
