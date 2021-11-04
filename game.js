@@ -7,7 +7,7 @@ function Bear() {
   this.y = this.htmlElement.offsetTop;
   this.move = function (xDir, yDir) {
     //we add this instruction to keep bear within board
-    this.fitBounds();
+    //this.fitBounds();
 
     this.x += this.dBear * xDir;
     this.y += this.dBear * yDir;
@@ -67,6 +67,7 @@ function start() {
   document.addEventListener("change", setSpeed, false);
 
   //take start time
+  //every time the "keydown" is set, time is changed
   document.addEventListener("keydown", setLastStingTime, false);
   //
 
@@ -87,6 +88,7 @@ function setSpeed(e) {
 }
 
 function setLastStingTime(e) {
+  //track whether bear has moved or not to stopo NaN
   lastStingTime = new Date();
 }
 
